@@ -103,14 +103,21 @@ body {
 /* Sidebar - Positioned on the left */
 .sidebar {
   position: fixed;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
+  /* background box */
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 160px;
+  background-color: #2a0045;
+  border-right: 4px solid #ffd700;
+
+  /* centering page links */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
   z-index: 100;
-  width: 120px;
 }
 
 .nav-link {
