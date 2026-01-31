@@ -54,11 +54,11 @@ body {
   top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffd700;
+  color: #4B0082;
   font-weight: 900;
   font-size: 4.5rem;
   opacity: 0;
-  text-shadow: 4px 4px 0px #ff0000, 0 0 30px white;
+  text-shadow: 4px 4px 0px #faf6c3, 0 0 30px yellow;
   white-space: nowrap;
   z-index: 10;
   pointer-events: none;
