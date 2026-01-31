@@ -100,30 +100,31 @@ body {
   /*opacity: 1;*/
 }
 
-/* BASE SIDEBAR (How it looks on the Home Page) */
+/* This is the default - transparent for the home page */
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   width: 180px;
-  background-color: transparent; /* Invisible on home page */
-  border-right: 4px solid transparent; /* No line on home page */
-  
+  background-color: transparent; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
   z-index: 100;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* SOLID BAR VERSION (How it looks on About/Projects) */
-/* This only triggers if the body DOES NOT have the class 'home' */
+/* This adds the purple block ONLY on pages that ARE NOT home */
 body:not(.home) .sidebar {
-  background-color: #2a0045; /* Purple Block appears */
-  border-right: 4px solid #ffd700; /* Yellow line appears */
+  background-color: #2a0045; 
+  border-right: 4px solid #ffd700;
+}
+
+/* Keeps content from hiding behind the bar on inner pages */
+body:not(.home) .main-content {
+  padding-left: 160px;
 }
 
   /* centering page links */
