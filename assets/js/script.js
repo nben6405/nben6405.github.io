@@ -1,3 +1,4 @@
+//eyes following mouse
 document.addEventListener('mousemove', (e) => {
   const pupils = document.querySelectorAll('.pupil');
   pupils.forEach(pupil => {
@@ -12,5 +13,24 @@ document.addEventListener('mousemove', (e) => {
     const y = Math.sin(angle) * distance;
     
     pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+  });
+});
+//sidebar strike
+const links = document.querySelectorAll('.nav-link');
+const bolt = document.getElementById('lightning-bolt');
+const catContainer = document.querySelector('.cat-container');
+
+links.forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    // Make the cat start shaking manually
+    catContainer.classList.add('forced-hover');
+    // Fire the bolt
+    bolt.classList.add('zap-active');
+  });
+
+  link.addEventListener('mouseleave', () => {
+    // Stop the shake and hide the bolt
+    catContainer.classList.remove('forced-hover');
+    bolt.classList.remove('zap-active');
   });
 });
