@@ -19,6 +19,7 @@ body {
   align-items: center;
   cursor: crosshair;
   margin-top: 0;
+  border: 2px solid red; /* Delete this once you find the name! */
 }
 
 .shake-wrapper {
@@ -66,7 +67,7 @@ body {
 
 .zap-text {
   position: absolute;
-  top: -100px;
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
   
