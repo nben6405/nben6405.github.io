@@ -118,7 +118,7 @@ body {
 
 /* This adds the purple block ONLY on pages that ARE NOT home */
 body:not(.home) .sidebar {
-  background-color: #2a0045; 
+  background-color: #fffdcf; 
   border-right: 4px solid #ffd700;
 }
 
