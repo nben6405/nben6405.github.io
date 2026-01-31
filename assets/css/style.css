@@ -12,8 +12,17 @@ body {
 .cat-container {
   position: relative;
   width: 350px;
-  cursor: crosshair;
-  margin-top: 50px;
+  margin: 150px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*cursor: crosshair;
+  margin-top: 50px;*/
+}
+
+.shake-wrapper {
+  position: relative;
+  width: 100%;
 }
 
 .cat-body {
@@ -45,8 +54,8 @@ body {
 }
 
 /* Electrocution Effect */
-.cat-container:hover .cat-body {
-  animation: shake 0.1s infinite;
+.cat-container:hover .shake-wrapper{
+  animation: cat-shake 0.1s infinite;
 }
 .cat-container:hover .cat-body{
   filter: invert(1) hue-rotate(180deg) brightness(2) drop-shadow(0 0 15px yellow);
@@ -82,12 +91,24 @@ body {
     0 0 20px #fff, 
     0 0 40px #ff0;
 
-  animation: shake 0.1s infinite, flicker 0.2s infinite;
+  animation: name-shake 0.1s infinite, flicker 0.2s infinite;
   /*opacity: 1;*/
 }
 
-@keyframes shake {
+@keyframes name-shake {
   0% { transform: translate(calc(-50% + 2px), 2px); }
   50% { transform: translate(calc(-50% - 4px), 1px); }
   100% { transform: translate(calc(-50% + 2px), -2px); }
+}
+@keyframes cat-shake {
+  0% { transform: translate(2px, 2px); }
+  25% { transform: translate(-2px, -2px); }
+  50% { transform: translate(-3px, 1px); }
+  75% { transform: translate(3px, -1px); }
+  100% { transform: translate(2px, 2px); }
+}
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
 }
