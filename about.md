@@ -7,6 +7,6 @@ title: About Me
 
 Nitzan - Nee-tsun
 
-Soy milk lover, proud Prius driver (ask me about my gas mileage!), Electrical Engineering studentm among other things. Dog person, despite the flashy feline appearance of this website. 
+Soy milk lover, proud Prius driver (ask me about my gas mileage!), Electrical Engineering student, among other things. Dog person, despite the flashy feline appearance of this website. 
 
  
