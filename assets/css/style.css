@@ -5,8 +5,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  padding-left: 200px;
+  max-width: 1200px;
+  margin: 0 auto;
   font-family: sans-serif;
 }
 /* Cat & Cat Shaking */
@@ -109,6 +110,7 @@ body {
   flex-direction: column;
   gap: 25px;
   z-index: 100;
+  width: 120px;
 }
 
 .nav-link {
@@ -181,3 +183,10 @@ h1 {
 p {
   margin-top: 0px;
 }
+
+p, h1, h2 {
+  text-align: left;
+}
+  
+
+
