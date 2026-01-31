@@ -23,8 +23,8 @@ body {
 /* Eye Positions */
 .eye {
   position: absolute;
-  width: 45px; 
-  height: 65px;
+  width: 95px; 
+  height: 55px;
   background: white;
   border-radius: 50%;
   top: 15%; 
