@@ -23,11 +23,11 @@ body {
 /* Eye Positions */
 .eye {
   position: absolute;
-  width: 95px; 
+  width: 45px; 
   height: 55px;
   background: white;
   border-radius: 50%;
-  top: 15%; 
+  top: 19%; 
 }
 .left-eye { left: 33%; }
 .right-eye { left: 52%; }
