@@ -145,7 +145,6 @@ body {
 /* Triggered by JS */
 .zap-active {
   opacity: 1 !important;
-  width: 80vw !important; /* Adjust based on how far the sidebar is */
   animation: bolt-flicker 0.1s infinite;
 }
 
