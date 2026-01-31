@@ -13,13 +13,13 @@ body {
 .cat-container {
   position: relative;
   width: 350px;
-  margin: 600px auto 0 auto;
+  margin: 300px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: crosshair;
   margin-top: 200hv;
-  border: 2px solid red; /* Delete this once you find the name! */
+  border: 2px solid green; /* Delete this once you find the name! */
 }
 
 .shake-wrapper {
@@ -39,7 +39,7 @@ body {
   height: 65px;
   background: white;
   border-radius: 50%;
-  top: 21%; 
+  top: 20%; 
 }
 .left-eye { left: 33%; }
 .right-eye { left: 52%; }
@@ -67,7 +67,7 @@ body {
 
 .zap-text {
   position: absolute;
-  top: 0px;
+  top: -120px;
   left: 50%;
   transform: translateX(-50%);
   
@@ -122,7 +122,7 @@ body {
 /* The Zigzag Bolt */
 .lightning {
   position: absolute;
-  top: 21%; 
+  top: 20%; 
   right: 50%; /* Starts from the cat's eye area */
   width: 0;   /* Grows via JS */
   height: 60px;
