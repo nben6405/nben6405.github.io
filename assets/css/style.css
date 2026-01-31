@@ -38,7 +38,7 @@ body {
   height: 65px;
   background: white;
   border-radius: 50%;
-  top: 15%; 
+  top: 25%; 
 }
 .left-eye { left: 33%; }
 .right-eye { left: 52%; }
@@ -66,7 +66,7 @@ body {
 
 .zap-text {
   position: absolute;
-  top: -70px;
+  top: -130px;
   left: 50%;
   transform: translateX(-50%);
   
@@ -121,7 +121,7 @@ body {
 /* The Zigzag Bolt */
 .lightning {
   position: absolute;
-  top: 15%; 
+  top: 25%; 
   right: 50%; /* Starts from the cat's eye area */
   width: 0;   /* Grows via JS */
   height: 60px;
