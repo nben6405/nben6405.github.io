@@ -55,10 +55,12 @@ body {
   left: 50%;
   transform: translateX(-50%);
   
-  font-family: "Rubik Mono One", serif;
-  
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+
   color: #4B0082;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 3.5rem;
   opacity: 1;
   text-shadow: 4px 4px 0px #faf6c3, 0 0 30px yellow;
