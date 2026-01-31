@@ -1,123 +1,14 @@
 ---
 layout: default
-title: My Electric Cat
+title: My Personal Site
 ---
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-  body {
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  .cat-container {
-    position: relative;
-    width: 350px; 
-    cursor: crosshair;
-  }
-
-  .cat-body {
-    width: 100%;
-    display: block;
-  }
-
-  /* Eye Sockets */
-  .eye {
-    position: absolute;
-    width: 55px; 
-    height: 55px;
-    background: white;
-    border-radius: 50%;
-    top: 21%; 
-  }
-
-  .left-eye { left: 33%; }
-  .right-eye { left: 52%; }
-
-  .pupil {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background: #4B0082; 
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* Hover Effects */
-  .cat-container:hover .cat-body {
-    animation: shake 0.1s infinite;
-    filter: invert(1) hue-rotate(180deg) brightness(2) drop-shadow(0 0 15px yellow);
-  }
-
-  .zap-text {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #ffd700;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 2.5rem;
-    opacity: 0;
-    text-shadow: 2px 2px 0px #ff0000, 0 0 20px white;
-    white-space: nowrap;
-    pointer-events: none;
-  }
-
-  .cat-container:hover .zap-text {
-    opacity: 1;
-    animation: flicker 0.2s infinite;
-  }
-
-  @keyframes shake {
-    0% { transform: translate(2px, 2px); }
-    25% { transform: translate(-2px, -3px); }
-    50% { transform: translate(-4px, 1px); }
-    100% { transform: translate(2px, -2px); }
-  }
-
-  @keyframes flicker {
-    0% { opacity: 1; }
-    50% { opacity: 0.4; }
-    100% { opacity: 0.8; }
-  }
-</style>
-</head>
-<body>
-
 <div class="cat-container">
-  <div class="zap-text">⚡ YOUR NAME ⚡</div>
-
-  <img src="{{ '/assets/electric_cat.png' | relative_url }}" alt="Electric Cat" class="cat-body">
-  
+  <div class="zap-text">⚡ NITZAN BEN ARI ⚡</div>
+  <img src="{{ '/assets/electric_cat.png' | relative_url }}" class="cat-body">
   <div class="eye left-eye"><div class="pupil"></div></div>
   <div class="eye right-eye"><div class="pupil"></div></div>
 </div>
 
-<script>
-  document.addEventListener('mousemove', (e) => {
-    const pupils = document.querySelectorAll('.pupil');
-    pupils.forEach(pupil => {
-      const rect = pupil.parentElement.getBoundingClientRect();
-      const eyeX = rect.left + rect.width / 2;
-      const eyeY = rect.top + rect.height / 2;
-      const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
-      const distance = 15; 
-      const x = Math.cos(angle) * distance;
-      const y = Math.sin(angle) * distance;
-      pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-    });
-  });
-</script>
-
-</body>
-</html>
+<h1>Welcome to my corner of the web!</h1>
+<p>Hover over the cat at your own risk.</p>
