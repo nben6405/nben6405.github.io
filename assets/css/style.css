@@ -13,13 +13,13 @@ body {
 .cat-container {
   position: relative;
   width: 350px;
-  margin: 125px auto 0 auto;
+  margin: 100px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: crosshair;
 
-  border: 2px solid green;  Delete this once you find the name! 
+  border: 2px solid purple;  Delete this once you find the name! 
 }
 
 .shake-wrapper {
@@ -67,7 +67,7 @@ body {
 
 .zap-text {
   position: absolute;
-  top: -120px;
+  top: -110px;
   left: 50%;
   transform: translateX(-50%);
   
