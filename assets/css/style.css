@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-left: 200px;
+  padding-left: 150px;
   max-width: 1200px;
   margin: 0 auto;
   font-family: sans-serif;
@@ -20,7 +20,7 @@ body {
   align-items: center;
   cursor: crosshair;
 
-  border: 2px solid purple;  Delete this once you find the name! 
+  /*border: 2px solid purple;  Delete this once you find the name! */
 }
 
 .shake-wrapper {
