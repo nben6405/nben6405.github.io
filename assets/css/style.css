@@ -13,13 +13,13 @@ body {
 .cat-container {
   position: relative;
   width: 350px;
-  margin: 200px auto 0 auto;
+  margin: 150px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: crosshair;
-  margin-top: 150hv;
-  border: 2px solid yellow; /* Delete this once you find the name! */
+  margin-top: 50hv;
+  border: 2px solid purple; /* Delete this once you find the name! */
 }
 
 .shake-wrapper {
