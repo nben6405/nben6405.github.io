@@ -52,7 +52,7 @@ body {
 
 .zap-text {
   position: absolute;
-  top: -90px;
+  top: -100px;
   left: 50%;
   transform: translateX(-50%);
   
@@ -62,17 +62,26 @@ body {
 
   color: #4B0082;
   font-weight: 500;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   opacity: 1;
-  text-shadow: 4px 4px 0px #faf6c3, 0 0 30px yellow;
+  /*text-shadow: 4px 4px 0px #faf6c3, 0 0 30px yellow;*/
   white-space: nowrap;
   z-index: 10;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  text-shadow:none;
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
 .cat-container:hover .zap-text {
-  opacity: 1;
+  color: #ffd700;
+
+  text-shadow:
+    4px 4px 0px #ff0000,
+    0 0 20px #fff, 
+    0 0 40px #ff0;
+
+  animation: shake 0.1s infinite, flicker 0.2s infinite;
+  /*opacity: 1;*/
 }
 
 @keyframes shake {
