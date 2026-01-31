@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: crosshair;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .shake-wrapper {
@@ -38,7 +38,7 @@ body {
   height: 65px;
   background: white;
   border-radius: 50%;
-  top: 25%; 
+  top: 50%; 
 }
 .left-eye { left: 33%; }
 .right-eye { left: 52%; }
