@@ -47,6 +47,8 @@ body {
 /* Electrocution Effect */
 .cat-container:hover .cat-body {
   animation: shake 0.1s infinite;
+}
+.cat-container:hover .cat-body{
   filter: invert(1) hue-rotate(180deg) brightness(2) drop-shadow(0 0 15px yellow);
 }
 
