@@ -124,16 +124,20 @@ body {
   top: 25%; 
   right: 50%; /* Starts from the cat's eye area */
   width: 0;   /* Grows via JS */
-  height: 40px;
-  background: #ffd700;
+  height: 60px;
+  background: #fff;
   
   /* This creates the jagged lightning shape */
   clip-path: polygon(0% 50%, 20% 0%, 15% 50%, 40% 10%, 35% 60%, 65% 20%, 60% 75%, 100% 40%, 75% 85%, 85% 55%, 55% 95%, 60% 45%, 30% 90%, 35% 35%, 0% 50%);
   
-  box-shadow: 0 0 20px #fff, 0 0 40px #ff0;
+  box-shadow: 
+    0 0  10px #fff,
+    0 0 30px #ffd700,
+    0 0 60px #ffcc00;
   opacity: 0;
   pointer-events: none;
   z-index: 5;
+  transform: rotate(5deg);
   transform-origin: right center; /* Shoots out to the left */
   transition: width 0.1s ease-in, opacity 0.1s;
 }
@@ -141,7 +145,7 @@ body {
 /* Triggered by JS */
 .zap-active {
   opacity: 1 !important;
-  width: 400px !important; /* Adjust based on how far the sidebar is */
+  width: 80vw !important; /* Adjust based on how far the sidebar is */
   animation: bolt-flicker 0.1s infinite;
 }
 
