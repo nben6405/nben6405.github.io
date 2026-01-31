@@ -23,8 +23,8 @@ body {
 /* Eye Positions */
 .eye {
   position: absolute;
-  width: 55px; 
-  height: 55px;
+  width: 35px; 
+  height: 75px;
   background: white;
   border-radius: 50%;
   top: 21%; 
@@ -51,15 +51,18 @@ body {
 
 .zap-text {
   position: absolute;
-  top: -30px;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
   color: #ffd700;
-  font-weight: bold;
-  font-size: 2.5rem;
+  font-weight: 900;
+  font-size: 4.5rem;
   opacity: 0;
-  text-shadow: 2px 2px 0px #ff0000, 0 0 20px white;
+  text-shadow: 4px 4px 0px #ff0000, 0 0 30px white;
   white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
 .cat-container:hover .zap-text {
