@@ -13,12 +13,12 @@ body {
 .cat-container {
   position: relative;
   width: 350px;
-  margin: 100px auto 0 auto;
+  margin: 125px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: crosshair;
-  margin-top: 50hv;
+
   border: 2px solid purple;  Delete this once you find the name! 
 }
 
