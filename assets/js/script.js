@@ -34,3 +34,13 @@ links.forEach(link => {
     bolt.classList.remove('zap-active');
   });
 });
+//lighting bold sidebar aim
+link.addEventListener('mouseenter', () => {
+  catContainer.classList.add('forced-hover');
+  bolt.classList.add('zap-active');
+
+  // This slightly tilts the bolt based on which link you hit
+  const linkIndex = Array.from(links).indexOf(link);
+  const tilt = (linkIndex - 1) * 10; // Tilts up for first link, down for last
+  bolt.style.transform = `rotate(${tilt}deg)`;
+});
