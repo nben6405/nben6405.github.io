@@ -229,13 +229,11 @@ p, h1, h2 {
   
 /*Doc*/
 .doc-container {
-  position: relative;
   width: 100%;
-  height: 800px; /* Adjust this to make the document longer or shorter */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd; /* Adds a light border around the doc */
-  border-radius: 4px;
+  height: 90vh; /* 90% of the user's screen height */
+  margin: 20px 0;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
   overflow: hidden;
 }
 
