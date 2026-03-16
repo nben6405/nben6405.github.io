@@ -3,7 +3,7 @@ layout: default
 title: Projects
 ---
 
-<div class="project-card">
+<div class="project-card" markdown="1">
 
 ## RF Heating Internship @ Commonwealth Fusion Systems
 This presentation covers the main projects I worked on during my internship at CFS.
@@ -18,7 +18,7 @@ This presentation covers the main projects I worked on during my internship at C
 
 </div>
 
-<div class="project-card">
+<div class="project-card" markdown="1">
 
 ## Raspberry Pi Data Acquisition System
 A fully automated data acquisition system for real-time sensor measurement collection during wheel force transducer testing. Integrates Raspberry Pi GPIO control, MCC DAQ analog acquisition hardware, real-time calibration mapping, and automated post-processing visualization.
