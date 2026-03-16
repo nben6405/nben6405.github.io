@@ -3,22 +3,16 @@ layout: default
 title: Projects
 ---
 
-## Projects
-
 <div class="project-card">
 
-### RF Heating Internship @ Commonwealth Fusion Systems
-This presentation covers the main projects I worked on during my internship at CFS, focused on RF heating systems for plasma.
+## RF Heating Internship @ Commonwealth Fusion Systems
+This presentation covers the main projects I worked on during my internship at CFS.
 
 <div class="video-container">
   <iframe
     src="https://docs.google.com/presentation/d/e/2PACX-1vRG-ejUZ-pB246nUbGF_D_WAVyZ-FZJDoiDNUP27NtYX7g0VsBFA2iKVXxhr2lnRQ/pubembed?start=false&loop=false&delayms=3000"
-    frameborder="0"
-    width="960"
-    height="569"
-    allowfullscreen="true"
-    mozallowfullscreen="true"
-    webkitallowfullscreen="true">
+    frameborder="0" width="960" height="569"
+    allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
   </iframe>
 </div>
 
@@ -26,8 +20,7 @@ This presentation covers the main projects I worked on during my internship at C
 
 <div class="project-card">
 
-### Raspberry Pi Data Acquisition System
-
+## Raspberry Pi Data Acquisition System
 A fully automated data acquisition system for real-time sensor measurement collection during wheel force transducer testing. Integrates Raspberry Pi GPIO control, MCC DAQ analog acquisition hardware, real-time calibration mapping, and automated post-processing visualization.
 
 Sensor channels include front/rear shock potentiometers (displacement in inches) and front/rear brake pressure sensors (PSI), with raw voltages automatically mapped to physical units via a YAML calibration config.
