@@ -1,26 +1,127 @@
+/* ============================================
+   VARIABLES & RESET
+   ============================================ */
+:root {
+  --bg:         #0f1117;
+  --surface:    #181c27;
+  --border:     #2a2f3d;
+  --text:       #e0e4ef;
+  --muted:      #7a8099;
+  --accent:     #4af0c4;
+  --accent-dim: #1a6e59;
+  --sidebar-w:  200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
 body {
-  background-color: #f0f0f0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Google Sans Code", monospace;
+  font-size: 1rem;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover { opacity: 0.75; }
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 1.75rem; margin-bottom: 0.5rem; color: var(--text); }
+h2 { font-size: 1.3rem;  margin-bottom: 0.4rem; color: var(--accent); }
+h3 { font-size: 1.1rem;  margin-bottom: 0.3rem; color: var(--muted); }
+
+p  { margin-bottom: 1rem; color: var(--text); }
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: var(--sidebar-w);
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding-left: 150px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: sans-serif;
+  align-items: flex-start;
+  padding: 0 28px;
+  gap: 8px;
+  z-index: 100;
 }
-/* Cat & Cat Shaking */
-.cat-container {
-  position: relative;
-  width: 350px;
-  margin: 100px auto 0 auto;
+
+.nav-link {
+  font-family: "Google Sans Code", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 0;
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  margin-left: -10px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  opacity: 1;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
+  margin-left: var(--sidebar-w);
+  padding: 60px 64px;
+  max-width: 860px;
+  width: 100%;
+  flex: 1;
+}
+
+/* ============================================
+   HOME PAGE — CAT
+   ============================================ */
+body.home {
+  display: flex;
+  flex-direction: row;
+}
+
+body.home .main-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  cursor: crosshair;
+  justify-content: center;
+  padding-top: 0;
+}
 
-  /*border: 2px solid purple;  Delete this once you find the name! */
+.cat-container {
+  position: relative;
+  width: 220px;
+  margin-bottom: 32px;
+  cursor: crosshair;
 }
 
 .shake-wrapper {
@@ -31,192 +132,134 @@ body {
 .cat-body {
   width: 100%;
   display: block;
+  filter: saturate(0.6) brightness(0.9);
+  transition: filter 0.3s;
+}
+
+.zap-text {
+  font-family: "Google Sans Code", monospace;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  white-space: nowrap;
+  margin-bottom: 12px;
+  pointer-events: none;
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
 /* Eye Positions */
 .eye {
   position: absolute;
-  width: 50px; 
-  height: 65px;
-  background: white;
+  width: 32px;
+  height: 42px;
+  background: #1a1a2e;
   border-radius: 50%;
-  top: 20%; 
+  top: 20%;
 }
-.left-eye { left: 33%; }
+.left-eye  { left: 33%; }
 .right-eye { left: 52%; }
 
 .pupil {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #4B0082;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px var(--accent);
 }
 
-/* Electrocution Effect */
-.cat-container:hover .shake-wrapper,
-.forced-hover .shake-wrapper{
-  animation: cat-shake 0.1s infinite;
-}
+/* Hover — subtle glow instead of full invert */
 .cat-container:hover .cat-body,
-.forced-hover .cat-body{
-  filter: invert(1) hue-rotate(180deg) brightness(2) drop-shadow(0 0 15px yellow);
+.forced-hover .cat-body {
+  filter: saturate(1.1) brightness(1.05) drop-shadow(0 0 10px var(--accent));
 }
 
-.zap-text {
-  position: absolute;
-  top: -110px;
-  left: 50%;
-  transform: translateX(-50%);
-  
-  font-family: "Google Sans Code", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-
-  color: #4B0082;
-  font-weight: 500;
-  font-size: 4.5rem;
-  opacity: 1;
-  /*text-shadow: 4px 4px 0px #faf6c3, 0 0 30px yellow;*/
-  white-space: nowrap;
-  z-index: 999;
-  pointer-events: none;
-  text-shadow:none;
-  transition: color 0.2s, text-shadow 0.2s;
+.cat-container:hover .shake-wrapper,
+.forced-hover .shake-wrapper {
+  animation: cat-shake 0.15s infinite;
 }
 
 .cat-container:hover .zap-text {
-  color: #ffd700;
-
-  text-shadow:
-    4px 4px 0px #ff0000,
-    0 0 20px #fff, 
-    0 0 40px #ff0;
-
-  animation: name-shake 0.1s infinite, flicker 0.2s infinite;
-  /*opacity: 1;*/
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-dim);
 }
 
-/* This is the default - transparent for the home page */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 180px;
-  background-color: transparent; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  z-index: 100;
-}
-
-/* This adds the purple block ONLY on pages that ARE NOT home */
-body:not(.home) .sidebar {
-  background-color: #fffdcf; 
-  border-right: 4px solid #fffdcf;
-}
-
-/* Keeps content from hiding behind the bar on inner pages */
-body:not(.home) .main-content {
-  padding-left: 160px;
-}
-
-  /* centering page links */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  z-index: 100;
-}
-
-.nav-link {
-  font-family: "Rubik Mono One", sans-serif;
-  color: #4B0082;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.2s ease;
-}
-
-/* The Zigzag Bolt */
+/* ============================================
+   LIGHTNING BOLT
+   ============================================ */
 .lightning {
   position: absolute;
-  top: 20%; 
-  right: 50%; /* Starts from the cat's eye area */
-  width: 0;   /* Grows via JS */
-  height: 60px;
-  background: #fff;
-  
-  /* This creates the jagged lightning shape */
+  top: 20%;
+  right: 50%;
+  width: 0;
+  height: 40px;
+  background: var(--accent);
   clip-path: polygon(0% 50%, 20% 0%, 15% 50%, 40% 10%, 35% 60%, 65% 20%, 60% 75%, 100% 40%, 75% 85%, 85% 55%, 55% 95%, 60% 45%, 30% 90%, 35% 35%, 0% 50%);
-  
-  box-shadow: 
-    0 0  10px #fff,
-    0 0 30px #ffd700,
-    0 0 60px #ffcc00;
+  box-shadow: 0 0 8px var(--accent), 0 0 20px var(--accent-dim);
   opacity: 0;
   pointer-events: none;
   z-index: 5;
-  transform: rotate(5deg);
-  transform-origin: right center; /* Shoots out to the left */
+  transform-origin: right center;
   transition: width 0.1s ease-in, opacity 0.1s;
 }
 
-/* Triggered by JS */
 .zap-active {
   opacity: 1 !important;
-  animation: bolt-flicker 0.1s infinite;
+  animation: bolt-flicker 0.12s infinite;
 }
 
-@keyframes bolt-flicker {
-  0% { filter: brightness(1); }
-  50% { filter: brightness(2) contrast(1.5); }
-  100% { filter: brightness(1); }
+/* ============================================
+   PROJECTS — CARDS
+   ============================================ */
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
 }
 
-@keyframes name-shake {
-  0% { transform: translate(calc(-50% + 2px), 2px); }
-  50% { transform: translate(calc(-50% - 4px), 1px); }
-  100% { transform: translate(calc(-50% + 2px), -2px); }
-}
-@keyframes cat-shake {
-  0% { transform: translate(2px, 2px); }
-  25% { transform: translate(-2px, -2px); }
-  50% { transform: translate(-3px, 1px); }
-  75% { transform: translate(3px, -1px); }
-  100% { transform: translate(2px, 2px); }
-}
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.8; }
-  100% { opacity: 1; }
+.project-card h2 {
+  margin-bottom: 8px;
 }
 
-/* Text Spacing*/
-h1 {
-  margin-bottom: 5px;
+.project-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
-p {
-  margin-top: 0px;
+.project-card ul {
+  margin: 12px 0 16px 0;
+  padding-left: 1.2em;
 }
 
-p, h1, h2 {
-  text-align: left;
+.project-card ul li {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 4px;
 }
 
-/*Slideshow*/
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 36px 0;
+}
+
+/* ============================================
+   EMBEDDED MEDIA
+   ============================================ */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  margin-top: 16px;
 }
 
 .video-container iframe {
@@ -225,15 +268,15 @@ p, h1, h2 {
   left: 0;
   width: 100%;
   height: 100%;
+  border: none;
 }
-  
-/*Doc*/
+
 .doc-container {
   width: 100%;
-  height: 90vh; /* 90% of the user's screen height */
+  height: 90vh;
   margin: 20px 0;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -243,3 +286,52 @@ p, h1, h2 {
   border: none;
 }
 
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact-links a {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.contact-links a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes cat-shake {
+  0%   { transform: translate(1px, 1px); }
+  25%  { transform: translate(-1px, -1px); }
+  50%  { transform: translate(-2px, 1px); }
+  75%  { transform: translate(2px, -1px); }
+  100% { transform: translate(1px, 1px); }
+}
+
+@keyframes bolt-flicker {
+  0%   { filter: brightness(1); }
+  50%  { filter: brightness(1.6); }
+  100% { filter: brightness(1); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 700px) {
+  :root { --sidebar-w: 0px; }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 32px 24px;
+  }
+}
