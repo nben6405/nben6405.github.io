@@ -27,4 +27,4 @@ Key features:
 - Continuous buffered multichannel analog sampling via ULDAQ
 - Outputs calibrated CSV, raw CSV, calibration YAML snapshot, and stacked plots
 
-<a href="https://github.com/nben6405/sensors-wft" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+<a href="https://github.com/nben6405/sensors-wft" target="_blank" rel="noopener noreferrer">View on GitHub Here </a>
