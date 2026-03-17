@@ -5,6 +5,8 @@ title: Projects
 
 <div class="project-card" markdown="1">
 
+# Projects
+
 ## RF Heating Internship @ Commonwealth Fusion Systems
 This presentation covers the main projects I worked on during my internship at CFS.
 

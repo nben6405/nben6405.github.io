@@ -1,10 +1,12 @@
-## My Resume!
+
+# Contact Me
+## My Resume
 <a href="/assets/docs/benari_resume.pdf" target="_blank" rel="noopener noreferrer" download>
-  Download my Resume (PDF)
+  Nitzan's Resume (PDF Download)
 </a>
 
-### Connect with me
-<div class="contact-links" style="font-size: 2rem; display: flex; gap: 20px;">
+## Connect with me
+<div class="contact-links" style="font-size: 2rem; display: flex; gap: 35px;">
   <a href="https://github.com/nben6405" target="_blank" style="color: inherit;">
     <i class="fab fa-github"></i>
   </a>
