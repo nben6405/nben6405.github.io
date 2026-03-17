@@ -3,7 +3,7 @@ layout: default
 title: About Me
 ---
  
-<div style="display: flex; gap: 60px; align-items: flex-start;">
+<div class="about-flex" style="display: flex; gap: 60px; align-items: flex-start; width: 100%;">
   <div markdown="1" style="flex: 1;">
   
 
