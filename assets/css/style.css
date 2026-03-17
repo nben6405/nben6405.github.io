@@ -307,6 +307,92 @@ a:hover {
   to   { transform: translateY(-50%) rotate(360deg); }
 }
 
+/* Wavy lines — inner pages only */
+body:not(.home)::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100vh;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 22px,
+      rgba(232, 98, 42, 0.07) 22px,
+      rgba(81, 16, 124, 0.07) 23px
+    );
+  -webkit-mask-image: 
+    radial-gradient(ellipse 80% 90% at 80% 50%, black 30%, transparent 75%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      black 8px,
+      black 9px
+    );
+  -webkit-mask-composite: destination-in;
+  mask-image: 
+    radial-gradient(ellipse 80% 90% at 80% 50%, black 30%, transparent 75%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      black 8px,
+      black 9px
+    );
+  mask-composite: intersect;
+  pointer-events: none;
+  z-index: 0;
+  animation: wave-drift 8s ease-in-out infinite alternate;
+}
+
+body:not(.home)::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100vh;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 22px,
+      rgba(255, 71, 20, 0.534) 22px,
+      rgba(55, 29, 255, 0.61) 23px
+    );
+  -webkit-mask-image:
+    radial-gradient(ellipse 80% 90% at 80% 50%, black 30%, transparent 75%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      black 8px,
+      black 9px
+    );
+  -webkit-mask-composite: destination-in;
+  mask-image:
+    radial-gradient(ellipse 80% 90% at 80% 50%, black 30%, transparent 75%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      black 8px,
+      black 9px
+    );
+  mask-composite: intersect;
+  pointer-events: none;
+  z-index: 0;
+  animation: wave-drift 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes wave-drift {
+  from { transform: translateY(-6px); }
+  to   { transform: translateY(6px); }
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
