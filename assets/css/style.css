@@ -320,8 +320,8 @@ body:not(.home)::before {
       0deg,
       transparent,
       transparent 22px,
-      rgba(232, 98, 42, 0.07) 22px,
-      rgba(81, 16, 124, 0.07) 23px
+      rgba(240, 76, 6, 0.397) 22px,
+      rgba(232, 99, 42, 0.522) 23px
     );
   -webkit-mask-image: 
     radial-gradient(ellipse 80% 90% at 80% 50%, black 30%, transparent 75%),
@@ -360,8 +360,8 @@ body:not(.home)::after {
       0deg,
       transparent,
       transparent 22px,
-      rgba(255, 71, 20, 0.534) 22px,
-      rgba(55, 29, 255, 0.61) 23px
+      rgba(87, 4, 252, 0.192) 22px,
+      rgba(87, 4, 252, 0.192) 23px
     );
   -webkit-mask-image:
     radial-gradient(ellipse 80% 90% at 80% 50%, black 30%, transparent 75%),
