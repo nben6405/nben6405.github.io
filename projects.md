@@ -7,7 +7,7 @@ title: Projects
 
 # Projects
 
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 2.0rem; letter-spacing: 0.0em; text-transform: uppercase; color: #9e9a88;">RF Heating Internship @ Commonwealth Fusion Systems</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 2.0rem; letter-spacing: 0.0em; line-height: 1.1; text-transform: uppercase; color: #9e9a88;">RF Heating Internship @ Commonwealth Fusion Systems</span>
 
 This presentation covers the main projects I worked on during my internship at CFS.
 
@@ -23,7 +23,7 @@ This presentation covers the main projects I worked on during my internship at C
 
 <div class="project-card" markdown="1">
 
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 2.0rem; letter-spacing: 0.0em; text-transform: uppercase; color: #9e9a88;">Raspberry Pi Data Acquisition System</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 2.0rem; letter-spacing: 0.0em; line-height: 1.1; text-transform: uppercase; color: #9e9a88;">Raspberry Pi Data Acquisition System</span>
 
 A fully automated data acquisition system for real-time sensor measurement collection during wheel force transducer testing. Integrates Raspberry Pi GPIO control, MCC DAQ analog acquisition hardware, real-time calibration mapping, and automated post-processing visualization.
 
