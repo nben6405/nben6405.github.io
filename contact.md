@@ -1,7 +1,7 @@
 
 # Contact Me
 ## My Resume
-<a href="/assets/docs/BenAri_Resume(13).pdf" target="_blank" rel="noopener noreferrer" download>
+<a href="/assets/docs/BenAri_Resume (13).pdf" target="_blank" rel="noopener noreferrer" download>
   Nitzan's Resume (PDF Download)
 </a>
 
