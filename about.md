@@ -3,7 +3,7 @@ layout: default
 title: About Me
 ---
  
-<div style="display: flex; gap: 60px; justify-content: space-between;">
+<div style="display: flex; gap: 60px; align-items: flex-start; width: 100%;">
   <div markdown="1" style="flex: 1;">
 
 # About Me
@@ -14,5 +14,5 @@ I place immense value on supporting the longevity of the life around us and it's
 
   </div>
   <img src="{{ '/assets/images/head1BW.png' | relative_url }}" 
-       style="width: 280px; height: 380px; object-fit: cover; border-radius: 4px; flex-shrink: 0; ">
+       style="width: 280px; height: 380px; object-fit: cover; border-radius: 4px; flex-shrink: 0; margin-left: 150px;">
 </div>
