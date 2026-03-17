@@ -9,7 +9,8 @@ title: About Me
 
 # About Me
 
-Nitzan - Nee-tsun | 3rd year Electrical Engineering @ Northeastern University
+Nitzan - Nee-tsun 
+3rd year Electrical Engineering @ Northeastern University
 
 I place value on supporting the longevity of the life around us and it's important to me that the work I do contributes to the positive progression of humanity, earth, and the world beyond! I'm interested in nuclear fusion and the science/engineering behind recreating extreme environments.
 
