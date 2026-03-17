@@ -35,4 +35,7 @@ Sensor channels include front/rear shock potentiometers (displacement in inches)
 
 <a href="https://github.com/nben6405/sensors-wft" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
 
+<img src="{{ '/assets/images/assets/images/12-09-2025_21-01-44_MCC_DAQ_DATA_STACKED_PLOT.png' | relative_url }}" 
+     style="width: 100%; max-width: 600px; margin-top: 1.5rem; border-radius: 4px;">
+
 </div>
