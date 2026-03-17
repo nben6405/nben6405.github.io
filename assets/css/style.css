@@ -1,245 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS — Dark Fusion Theme
+   ============================================================ */
+:root {
+  --bg:        #1a1a14;
+  --bg-surface:#222219;
+  --cream:     #e8e4d0;
+  --cream-dim: #9e9a88;
+  --accent-a:  #e8622a;
+  --accent-b:  #7b4fd4;
+  --sidebar-w: 180px;
+  --gradient: linear-gradient(135deg, var(--accent-a), #e8952a 40%, var(--accent-b));
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
   min-height: 100vh;
-  padding-left: 150px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: sans-serif;
-}
-/* Cat & Cat Shaking */
-.cat-container {
-  position: relative;
-  width: 350px;
-  margin: 100px auto 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: crosshair;
-
-  /*border: 2px solid purple;  Delete this once you find the name! */
+  padding-left: var(--sidebar-w);
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.shake-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.cat-body {
-  width: 100%;
-  display: block;
-}
-
-/* Eye Positions */
-.eye {
-  position: absolute;
-  width: 50px; 
-  height: 65px;
-  background: white;
-  border-radius: 50%;
-  top: 20%; 
-}
-.left-eye { left: 33%; }
-.right-eye { left: 52%; }
-
-.pupil {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #4B0082;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Electrocution Effect */
-.cat-container:hover .shake-wrapper,
-.forced-hover .shake-wrapper{
-  animation: cat-shake 0.1s infinite;
-}
-.cat-container:hover .cat-body,
-.forced-hover .cat-body{
-  filter: invert(1) hue-rotate(180deg) brightness(2) drop-shadow(0 0 15px yellow);
-}
-
-.zap-text {
-  position: absolute;
-  top: -110px;
-  left: 50%;
-  transform: translateX(-50%);
-  
-  font-family: "Google Sans Code", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-
-  color: #4B0082;
-  font-weight: 500;
-  font-size: 4.5rem;
-  opacity: 1;
-  /*text-shadow: 4px 4px 0px #faf6c3, 0 0 30px yellow;*/
-  white-space: nowrap;
-  z-index: 999;
-  pointer-events: none;
-  text-shadow:none;
-  transition: color 0.2s, text-shadow 0.2s;
-}
-
-.cat-container:hover .zap-text {
-  color: #ffd700;
-
-  text-shadow:
-    4px 4px 0px #ff0000,
-    0 0 20px #fff, 
-    0 0 40px #ff0;
-
-  animation: name-shake 0.1s infinite, flicker 0.2s infinite;
-  /*opacity: 1;*/
-}
-
-/* This is the default - transparent for the home page */
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
-  width: 180px;
-  background-color: transparent; 
+  width: var(--sidebar-w);
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 30px;
+  align-items: flex-start;
+  padding: 0 0 0 28px;
+  gap: 36px;
   z-index: 100;
 }
 
-/* This adds the purple block ONLY on pages that ARE NOT home */
 body:not(.home) .sidebar {
-  background-color: #fffdcf; 
-  border-right: 4px solid #fffdcf;
-}
-
-/* Keeps content from hiding behind the bar on inner pages */
-body:not(.home) .main-content {
-  padding-left: 160px;
-}
-
-  /* centering page links */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  z-index: 100;
+  border-right: 1px solid rgba(232,228,208,0.1);
+  background: linear-gradient(to right, rgba(232,228,208,0.04), transparent);
 }
 
 .nav-link {
-  font-family: "Rubik Mono One", sans-serif;
-  color: #4B0082;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* The Zigzag Bolt */
-.lightning {
-  position: absolute;
-  top: 20%; 
-  right: 50%; /* Starts from the cat's eye area */
-  width: 0;   /* Grows via JS */
-  height: 60px;
-  background: #fff;
-  
-  /* This creates the jagged lightning shape */
-  clip-path: polygon(0% 50%, 20% 0%, 15% 50%, 40% 10%, 35% 60%, 65% 20%, 60% 75%, 100% 40%, 75% 85%, 85% 55%, 55% 95%, 60% 45%, 30% 90%, 35% 35%, 0% 50%);
-  
-  box-shadow: 
-    0 0  10px #fff,
-    0 0 30px #ffd700,
-    0 0 60px #ffcc00;
+.nav-link::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gradient);
   opacity: 0;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nav-link:hover {
+  color: var(--cream);
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+.main-content {
+  flex: 1;
+  padding: 80px 60px 80px 40px;
+  max-width: 860px;
+}
+
+body:not(.home) .main-content {
+  padding-left: 48px;
+}
+
+/* ============================================================
+   HOME HERO
+   ============================================================ */
+.home .main-content {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.home-hero {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.4rem;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--cream-dim);
+  line-height: 1.6;
+  max-width: 40ch;
+  margin: 0;
+}
+
+/* Rotating star fixed to right side on home */
+.home .main-content::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  right: 7%;
+  transform: translateY(-50%);
+  width: 280px;
+  height: 280px;
+  background: var(--gradient);
+  clip-path: polygon(
+    50% 0%, 56% 35%, 79% 9%, 65% 40%,
+    100% 38%, 68% 52%, 100% 65%, 65% 60%,
+    79% 91%, 56% 65%, 50% 100%, 44% 65%,
+    21% 91%, 35% 60%, 0% 65%, 32% 52%,
+    0% 38%, 35% 40%, 21% 9%, 44% 35%
+  );
+  opacity: 0.85;
   pointer-events: none;
-  z-index: 5;
-  transform: rotate(5deg);
-  transform-origin: right center; /* Shoots out to the left */
-  transition: width 0.1s ease-in, opacity 0.1s;
+  z-index: 1;
+  animation: star-spin 30s linear infinite;
 }
 
-/* Triggered by JS */
-.zap-active {
-  opacity: 1 !important;
-  animation: bolt-flicker 0.1s infinite;
-}
-
-@keyframes bolt-flicker {
-  0% { filter: brightness(1); }
-  50% { filter: brightness(2) contrast(1.5); }
-  100% { filter: brightness(1); }
-}
-
-@keyframes name-shake {
-  0% { transform: translate(calc(-50% + 2px), 2px); }
-  50% { transform: translate(calc(-50% - 4px), 1px); }
-  100% { transform: translate(calc(-50% + 2px), -2px); }
-}
-@keyframes cat-shake {
-  0% { transform: translate(2px, 2px); }
-  25% { transform: translate(-2px, -2px); }
-  50% { transform: translate(-3px, 1px); }
-  75% { transform: translate(3px, -1px); }
-  100% { transform: translate(2px, 2px); }
-}
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.8; }
-  100% { opacity: 1; }
-}
-
-/* Text Spacing*/
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
 h1 {
-  margin-bottom: 5px;
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
 }
 
 p {
-  margin-top: 0px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  max-width: 65ch;
+  margin-bottom: 1.2rem;
 }
 
-p, h1, h2 {
-  text-align: left;
+a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(232,228,208,0.3);
+  transition: text-decoration-color 0.2s;
 }
 
-/*Slideshow*/
+a:hover {
+  text-decoration-color: var(--accent-a);
+}
+
+/* ============================================================
+   PROJECTS PAGE
+   ============================================================ */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+  margin: 2rem 0;
+  border: 1px solid rgba(232,228,208,0.1);
+  border-radius: 4px;
 }
 
 .video-container iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
 }
-  
-/*Doc*/
+
 .doc-container {
   width: 100%;
-  height: 90vh; /* 90% of the user's screen height */
+  height: 90vh;
   margin: 20px 0;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
+  border: 1px solid rgba(232,228,208,0.1);
+  border-radius: 4px;
   overflow: hidden;
 }
 
 .doc-container iframe {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   border: none;
 }
 
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-links {
+  display: flex;
+  gap: 24px;
+  margin-top: 1rem;
+}
+
+.contact-links a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--cream-dim);
+  transition: color 0.2s;
+}
+
+.contact-links a:hover {
+  color: var(--accent-a);
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid rgba(232,228,208,0.2);
+  border-radius: 2px;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: transparent;
+  transition: background 0.2s, border-color 0.2s;
+  margin-bottom: 2rem;
+}
+
+.resume-link:hover {
+  background: rgba(232,228,208,0.06);
+  border-color: rgba(232,228,208,0.4);
+  text-decoration: none;
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes star-spin {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 700px) {
+  :root { --sidebar-w: 0px; }
+  body { padding-left: 0; }
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 20px 24px;
+    gap: 24px;
+    justify-content: flex-start;
+    border-right: none;
+    border-bottom: 1px solid rgba(232,228,208,0.1);
+    background: rgba(232,228,208,0.03);
+  }
+  .main-content { padding: 40px 24px 60px; }
+  .home .main-content::after { display: none; }
+}
