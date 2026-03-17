@@ -4,7 +4,7 @@ title: About Me
 ---
  
 <div style="display: flex; gap: 60px; align-items: flex-start;">
-  <div>
+  <div markdown="1">
 
 # About Me
 
