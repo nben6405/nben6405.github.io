@@ -11,7 +11,9 @@ title: About Me
 
 Nitzan - Nee-tsun
 
-I place immense value on supporting the longevity of the life around us and it's important to me that the work I do contributes to the positive progression of humanity, earth, and the world beyond! I'm interested in nuclear fusion and the science/engineering behind recreating extreme environments.
+I place value on supporting the longevity of the life around us and it's important to me that the work I do contributes to the positive progression of humanity, earth, and the world beyond! I'm interested in nuclear fusion and the science/engineering behind recreating extreme environments.
+
+As of late, I've been trying to learn more about wave-plasma interaction, specifically laser-driven plasma heating. 
 
   </div>
   <img src="{{ '/assets/images/head1BW.png' | relative_url }}" 
