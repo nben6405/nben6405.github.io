@@ -29,9 +29,9 @@ A fully automated data acquisition system for real-time sensor measurement colle
 
 Sensor channels include front/rear shock potentiometers (displacement in inches) and front/rear brake pressure sensors (PSI), with raw voltages automatically mapped to physical units via a YAML calibration config.
 
-. Boot-time auto-execution with pushbutton start/stop and LED status feedback
-. Continuous buffered multichannel analog sampling via ULDAQ
-. Outputs calibrated CSV, raw CSV, calibration YAML snapshot, and stacked plots
+- Boot-time auto-execution with pushbutton start/stop and LED status feedback
+- Continuous buffered multichannel analog sampling via ULDAQ
+- Outputs calibrated CSV, raw CSV, calibration YAML snapshot, and stacked plots
 
 <a href="https://github.com/nben6405/sensors-wft" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
 
