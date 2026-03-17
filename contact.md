@@ -1,6 +1,7 @@
 
 # Contact Me
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 2.0rem; letter-spacing: 0.0em; line-height: 1.1; text-transform: uppercase; color: #9e9a88;">My Resume</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 2.0rem; letter-spacing: 0.0em; line-height: 1.1; text-transform: uppercase; color: #9e9a88;">My Resume</span> 
+
 <a href="/assets/docs/BenAri_Resume (13).pdf" target="_blank" rel="noopener noreferrer" download>
   Nitzan's Resume (PDF Download)
 </a>
