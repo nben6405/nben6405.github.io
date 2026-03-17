@@ -16,7 +16,58 @@
 </head>
 
 <body class="{% if page.url == '/' or page.url == '/index.html' %}home{% endif %}">
+<body class="{% if page.url == '/' or page.url == '/index.html' %}home{% endif %}">
 
+{% unless page.url == '/' or page.url == '/index.html' %}
+<svg class="blob-waves" viewBox="0 0 900 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="g1" cx="72%" cy="18%" r="55%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="white" stop-opacity="1"/>
+      <stop offset="55%"  stop-color="white" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="58%" cy="35%" r="42%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="white" stop-opacity="0.85"/>
+      <stop offset="60%"  stop-color="white" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="blobmask">
+      <rect width="900" height="280" fill="black"/>
+      <rect width="900" height="280" fill="url(#g1)"/>
+      <rect width="900" height="280" fill="url(#g2)"/>
+    </mask>
+  </defs>
+  <g mask="url(#blobmask)">
+    <path d="M300 6  C420 -10 600 8  720 -4  C820 -14 880 10 920 2"  fill="none" stroke="#ff4400" stroke-width="0.7" opacity="0.9"/>
+    <path d="M260 11 C390  -6 590 14  710  2  C815  -8 878 14 920 8"  fill="none" stroke="#f05020" stroke-width="0.7" opacity="0.85"/>
+    <path d="M240 17 C370   2 575 20  700  8  C808   0 875 18 920 14" fill="none" stroke="#e8622a" stroke-width="0.7" opacity="0.8"/>
+    <path d="M210 23 C350   8 560 26  690 14  C800   6 872 22 920 20" fill="none" stroke="#e8622a" stroke-width="0.6" opacity="0.75"/>
+    <path d="M190 29 C335  14 548 32  678 20  C792  12 868 28 920 26" fill="none" stroke="#e07030" stroke-width="0.6" opacity="0.7"/>
+    <path d="M175 35 C320  20 535 38  665 26  C784  18 864 34 920 32" fill="none" stroke="#d8622a" stroke-width="0.6" opacity="0.65"/>
+    <path d="M165 41 C308  27 522 44  652 32  C776  24 860 40 920 38" fill="none" stroke="#cc5590" stroke-width="0.6" opacity="0.6"/>
+    <path d="M158 47 C298  34 510 50  640 38  C768  30 856 46 920 44" fill="none" stroke="#c04aaa" stroke-width="0.6" opacity="0.58"/>
+    <path d="M152 53 C290  41 498 57  628 45  C760  37 852 52 920 50" fill="none" stroke="#b040c0" stroke-width="0.6" opacity="0.55"/>
+    <path d="M148 59 C283  48 488 64  618 52  C753  44 849 58 920 56" fill="none" stroke="#a035d0" stroke-width="0.6" opacity="0.52"/>
+    <path d="M145 65 C278  55 478 71  608 59  C746  51 845 64 920 62" fill="none" stroke="#9030d8" stroke-width="0.6" opacity="0.5"/>
+    <path d="M144 71 C274  62 470 78  598 66  C740  58 842 70 920 68" fill="none" stroke="#8040d4" stroke-width="0.6" opacity="0.48"/>
+    <path d="M144 77 C272  69 463 85  590 73  C735  65 840 76 920 74" fill="none" stroke="#7b4fd4" stroke-width="0.6" opacity="0.46"/>
+    <path d="M145 83 C271  76 457 92  582 80  C730  72 838 82 920 80" fill="none" stroke="#7b4fd4" stroke-width="0.6" opacity="0.44"/>
+    <path d="M147 89 C271  83 452 99  575 87  C726  79 836 88 920 86" fill="none" stroke="#7b4fd4" stroke-width="0.6" opacity="0.42"/>
+    <path d="M150 96 C272  91 448 107 569 95  C722  87 834 95 920 93" fill="none" stroke="#7b4fd4" stroke-width="0.6" opacity="0.38"/>
+    <path d="M154 104 C274  99 445 116 564 104 C719  96 833 103 920 101" fill="none" stroke="#7050c8" stroke-width="0.5" opacity="0.32"/>
+    <path d="M159 113 C277 108 443 126 560 114 C717 106 832 112 920 110" fill="none" stroke="#6050bc" stroke-width="0.5" opacity="0.26"/>
+    <path d="M165 123 C281 118 442 137 557 125 C715 117 831 122 920 120" fill="none" stroke="#5050b0" stroke-width="0.5" opacity="0.2"/>
+    <path d="M172 134 C286 129 442 149 555 137 C714 129 831 133 920 131" fill="none" stroke="#4050a4" stroke-width="0.4" opacity="0.14"/>
+    <path d="M180 146 C292 141 443 162 554 150 C713 142 831 145 920 143" fill="none" stroke="#304898" stroke-width="0.4" opacity="0.09"/>
+    <path d="M190 160 C299 155 445 177 554 165 C712 157 831 159 920 157" fill="none" stroke="#28408c" stroke-width="0.3" opacity="0.05"/>
+    <path d="M550 4  C640 -12 760 6  860 -6  C900 -10 920 2 930 0"   fill="none" stroke="#ff6600" stroke-width="1"   opacity="0.7"/>
+    <path d="M530 9  C625  -8 750 10 855  0  C898  -4 920 8 930 5"   fill="none" stroke="#ff5500" stroke-width="0.9" opacity="0.65"/>
+    <path d="M515 15 C612   0 742 16 850  6  C895   2 920 14 930 11" fill="none" stroke="#f04010" stroke-width="0.8" opacity="0.55"/>
+    <path d="M144 78 C200 82 270 72 310 88 C350 104 320 118 280 112 C240 106 190 96 144 90" fill="none" stroke="#4060e8" stroke-width="0.6" opacity="0.3"/>
+    <path d="M144 85 C198 90 265 80 305 97 C342 113 314 128 272 121 C232 114 185 103 144 97" fill="none" stroke="#3050d8" stroke-width="0.5" opacity="0.22"/>
+  </g>
+</svg>
+{% endunless %}
   <div class="sidebar">
     <a href="{{ '/' | relative_url }}" class="nav-link">HOME</a>
     <a href="{{ '/about' | relative_url }}" class="nav-link">ABOUT ME</a>
